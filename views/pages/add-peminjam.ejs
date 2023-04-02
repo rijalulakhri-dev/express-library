@@ -1,0 +1,83 @@
+<div class="page-wrapper">
+    <!--page-content-wrapper-->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <!--breadcrumb-->
+            <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+                <div class="breadcrumb-title pr-3">Forms</div>
+                <div class="pl-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Validations</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="ml-auto">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">Settings</button>
+                        <button type="button" class="btn btn-primary bg-split-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="javascript:;">Another action</a>
+                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                            <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end breadcrumb-->
+        <div class="col-md-10">
+            <div class="card radius-15">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 class="mb-0">Form Tambah Data</h4>
+
+                        <% if (typeof errors != 'undefined') { %>
+             
+                            <div class="alert alert-danger" role="alert">
+                            <ul>
+                              <% errors.forEach(error => { %>
+                                <li><%= error.msg  %> </li>
+                              
+                              <% }) %>
+                            </ul>              
+                          </div>
+              
+                          <% } %>
+                          
+                    </div>
+                    <hr/>
+                    <form method="post" action="/peminjam">
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom01">Nama</label>
+                                <input type="text" class="form-control" id="nama" name="nama" required>
+                            
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom02">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom04">No Hp</label>
+                                <input type="text" class="form-control" id="nohp" name="nohp" required>
+                            </div>                    
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom03">Alamat</label>
+                                <input type="text" class="form-control" id="alamat" name="alamat" required>
+                                
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--end page-content-wrapper-->
+</div>
